@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define int long long
+
+signed main()
+{
+    int t;
+
+    cin >> t;
+
+    while(t--)
+    {
+        int a,b,c,d,x,y;
+        cin >> a >>c >>b >>d >>x >>y;
+
+        int step = abs(b-a) + abs(d-c);
+
+        if(a == b && b == x)
+        {
+            if(min(c,d) < y && y < max(c,d))
+            {
+                step += 2;
+            }
+        }
+        else if( c == d && d == y)
+        {
+            if(min(a,b) < x && x < max(a,b))
+            {
+                step +=2;
+            }
+        }
+    
+        cout << step << endl;
+    
+    }
+    
+
+}
